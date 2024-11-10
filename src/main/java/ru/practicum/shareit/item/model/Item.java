@@ -7,10 +7,6 @@ import ru.practicum.shareit.user.User;
 
 import java.util.Objects;
 
-/**
- * TODO Sprint add-controllers.
- */
-
 @Entity
 @Table(name = "items")
 @Getter

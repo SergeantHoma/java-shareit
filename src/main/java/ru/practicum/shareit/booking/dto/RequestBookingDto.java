@@ -16,5 +16,5 @@ public class RequestBookingDto {
     @NotNull
     private LocalDateTime end;
     @NotNull
-    Long itemId;
+    private Long itemId;
 }

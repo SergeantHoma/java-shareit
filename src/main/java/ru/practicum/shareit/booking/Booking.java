@@ -4,15 +4,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.Hibernate;
 import ru.practicum.shareit.item.model.Item;
 import ru.practicum.shareit.user.User;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
-
-/**
- * TODO Sprint add-bookings.
- */
 
 @Entity
 @Table(name = "bookings")
@@ -37,8 +34,14 @@ public class Booking {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Booking booking)) return false;
-        return Objects.equals(getId(), booking.getId()) && Objects.equals(getStart(), booking.getStart()) && Objects.equals(getEnd(), booking.getEnd()) && Objects.equals(getItem(), booking.getItem()) && Objects.equals(getBooker(), booking.getBooker()) && getStatus() == booking.getStatus();
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Booking booking = (Booking) o;
+        return Objects.equals(getId(), booking.getId()) &&
+                Objects.equals(getStart(), booking.getStart()) &&
+                Objects.equals(getEnd(), booking.getEnd()) &&
+                Objects.equals(getItem(), booking.getItem()) &&
+                Objects.equals(getBooker(), booking.getBooker()) &&
+                getStatus() == booking.getStatus();
     }
 
     @Override

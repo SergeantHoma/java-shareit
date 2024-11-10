@@ -25,5 +25,5 @@ public class ItemWithBookingDatesDto {
     private LocalDateTime lastBookingEnd;
     private LocalDateTime nextBookingStart;
     private LocalDateTime nextBookingEnd;
-    List<Comment> comments;
+    private List<Comment> comments;
 }
