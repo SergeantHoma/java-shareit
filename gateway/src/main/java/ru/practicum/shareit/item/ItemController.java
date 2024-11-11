@@ -9,6 +9,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.shareit.item.comment.CommentDto;
 
+import java.util.Collections;
+
 @RestController
 @RequestMapping("/items")
 @Slf4j
@@ -50,6 +52,10 @@ public class ItemController {
     public ResponseEntity<Object> getItemListBySearch(@RequestHeader(REQUEST_HEADER_VALUE) Long userId,
                                              @RequestParam(name = "text") String text) {
         log.info("Запрос на получение списка вещей у пользователя: {} по ключевому запросу text = {}", userId, text);
+        if (text == null || text.trim().isEmpty()) {
+            log.info("Пустой или некорректный запрос text = '{}', возвращаем пустую коллекцию.", text);
+            return ResponseEntity.ok(Collections.emptyList());
+        }
         return itemClient.getItemListBySearch(userId, text);
     }
 

@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ShareItGateway {
 	public static void main(String[] args) {
-
-		//TimeZone.setDefault(TimeZone.getTimeZone("GMT+03:00"));
 		SpringApplication.run(ShareItGateway.class, args);
 	}
 
