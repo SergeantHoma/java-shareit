@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import ru.practicum.shareit.exception.InvalidRequestException;
-import ru.practicum.shareit.exception.ValidationArgException;
+import ru.practicum.shareit.exeption.InvalidRequestException;
+import ru.practicum.shareit.exeption.ValidationArgException;
 
 @RestController
 public class ErrorHandler {
