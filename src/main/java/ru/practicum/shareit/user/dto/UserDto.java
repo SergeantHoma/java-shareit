@@ -14,9 +14,15 @@ public class UserDto {
     @NotNull(groups = AddUser.class)
     private String email;
 
+    /**
+     * группа проверок для сохранения
+     */
     public interface AddUser {
     }
 
+    /**
+     * группа проверок для обновления
+     */
     public interface UpdateUser {
     }
 }
